@@ -60,7 +60,12 @@ Al ejecutar la aplicación, verás:
 java -version
 mvn -version
 ```
+```
+## Respuesta a la pregunta del tercer ejercicio: Composition vs. Inheritance - Modeling Game Characters
 
+La herencia en determinados casos puede desencadenar en un problema, por ejemplo, si modelamos un personaje que puede ser un Warrior o un Mage, al agregar una nueva variación por ejemplo volar o nadar, la jerarquía no escala, vas a necesitar un FlyingWarrior, FlyingMage, SwimmingMage, etc. Cada nueva habilidad termina multiplicando las posibles combinaciones lo que provoca una “explosión de clases”. Con esto provocas capacidades ligadas creando así identidades rígidas, dificultando la reutilización y el mantenimiento, por más pequeño que sea el cambio en el comportamiento te obligan a crear o modificar múltiples subclases.
+Si además quisiéramos que un Warrior también pueda lanzar hechizos, nos encontraríamos con el problema de la herencia múltiple que Java no permite o con la necesidad de duplicar lógica aplicando parches, lo que termina generando un alto acoplamiento entre clases.
+```
 ## 🛠️ Configuración del Proyecto
 
 ### Estructura de directorios
