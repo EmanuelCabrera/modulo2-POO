@@ -1,6 +1,6 @@
-package com.mindhub.domain;
+package com.mindhub.excersice1.domain;
 
-import com.mindhub.interfaces.IProfileExporter;
+import com.mindhub.excersice1.interfaces.IProfileExporter;
 
 public class XmlProfileExporter implements IProfileExporter{
     @Override

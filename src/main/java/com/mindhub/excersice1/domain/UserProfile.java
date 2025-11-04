@@ -1,4 +1,4 @@
-package com.mindhub.domain;
+package com.mindhub.excersice1.domain;
 
 
 public class UserProfile {
