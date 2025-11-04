@@ -1,20 +1,35 @@
 # Modulo 2 - POO
 
-Proyecto base con Spring Boot y Java 17 para el curso de Arquitectura.
+Proyecto base con Spring Boot y Java 17 para el curso de Programación Orientada a Objetos.
 
 ## 📋 Descripción
 
-Este es un proyecto base configurado con Spring Boot 3.2.0 y Java 17, listo para desarrollo. Incluye configuración para base de datos H2, JPA, validación, y herramientas de desarrollo.
+Este proyecto contiene ejercicios prácticos de Programación Orientada a Objetos en Java, implementando conceptos como herencia, polimorfismo, interfaces y composición. Incluye tres ejercicios principales que demuestran diferentes aspectos de la POO.
+
+## 🎯 Ejercicios
+
+### 1. Exportación de Perfiles (Herencia y Polimorfismo)
+- Implementación de exportadores de perfiles a diferentes formatos (JSON, XML)
+- Uso de clases abstractas y herencia
+- Ubicación: `com.mindhub.excersice1`
+
+### 2. Sistema de Notificaciones (Interfaces)
+- Sistema de notificaciones con diferentes canales (Email, SMS, Push, Slack)
+- Uso de interfaces para definir comportamientos comunes
+- Ubicación: `com.mindhub.excersice2`
+
+### 3. Sistema de Personajes (Patrón Estrategia)
+- Implementación de personajes con diferentes comportamientos de ataque y movimiento
+- Uso de composición sobre herencia
+- Patrón de diseño Estrategia
+- Ubicación: `com.mindhub.excersice3`
 
 ## 🚀 Tecnologías
 
 - **Java**: 17
-- **Spring Boot**: 3.2.0
-- **Spring Data JPA**: Para acceso a datos
-- **H2 Database**: Base de datos en memoria para desarrollo
+- **Spring Boot**: 3.2.0 (solo para el contexto de la aplicación)
 - **Lombok**: Para reducir código boilerplate
 - **Maven**: Gestor de dependencias
-- **Spring Boot DevTools**: Herramientas de desarrollo
 
 ## 📦 Requisitos Previos
 
@@ -22,9 +37,26 @@ Este es un proyecto base configurado con Spring Boot 3.2.0 y Java 17, listo para
 - Maven 3.6+ instalado
 - IDE (IntelliJ IDEA, Eclipse, VS Code, etc.)
 
-### Verificar instalación
+## 🏃‍♂️ Ejecutando la Aplicación
+
+El método `main` en `Modulo2PooApplication` ejecuta demostraciones de los tres ejercicios:
+
+1. **Ejercicio 1**: Crea un perfil de usuario y lo exporta a JSON y XML.
+2. **Ejercicio 2**: Envía notificaciones a través de diferentes canales.
+3. **Ejercicio 3**: Crea personajes con diferentes comportamientos de ataque y movimiento, mostrando el patrón Estrategia.
+
+Para ejecutar la aplicación:
 
 ```bash
+mvn spring-boot:run
+```
+
+## 📝 Salida Esperada
+
+Al ejecutar la aplicación, verás:
+1. Exportación del perfil a JSON y XML
+2. Envío de diferentes tipos de notificaciones
+3. Creación de personajes con diferentes comportamientos y demostración de cómo cambiar dinámicamente estos comportamientos
 java -version
 mvn -version
 ```
@@ -40,7 +72,32 @@ modulo2-POO/
 │   │   ├── java/
 │   │   │   └── com/
 │   │   │       └── mindhub/
-│   │   │           └── Modulo2PooApplication.java
+│   │   │           ├── Modulo2PooApplication.java
+│   │   │           ├── excersice1/
+│   │   │           │   ├── domain/
+│   │   │           │   │   ├── UserProfile.java
+│   │   │           │   │   ├── JsonProfileExporter.java
+│   │   │           │   │   └── XmlProfileExporter.java
+│   │   │           │   └── service/
+│   │   │           ├── excersice2/
+│   │   │           │   ├── domain/
+│   │   │           │   │   ├── Notification.java
+│   │   │           │   │   ├── EmailNotification.java
+│   │   │           │   │   ├── SmsNotification.java
+│   │   │           │   │   ├── PushNotification.java
+│   │   │           │   │   └── SlackNotification.java
+│   │   │           │   └── service/
+│   │   │           │       └── NotificationService.java
+│   │   │           └── excersice3/
+│   │   │               ├── domain/
+│   │   │               │   ├── Character.java
+│   │   │               │   ├── SwordAttack.java
+│   │   │               │   ├── MagicAttack.java
+│   │   │               │   ├── WalkingMovement.java
+│   │   │               │   └── FlyingMovement.java
+│   │   │               └── interfaces/
+│   │   │                   ├── IAttackBehavior.java
+│   │   │                   └── IMovementBehavior.java
 │   │   └── resources/
 │   │       ├── application.properties
 │   │       ├── application-dev.properties
@@ -141,20 +198,9 @@ mvn test
 - **spring-boot-devtools**: Herramientas de desarrollo (auto-reload)
 - **spring-boot-starter-test**: Para testing
 
-## 📖 Próximos Pasos
-
-- [ ] Crear entidades JPA
-- [ ] Implementar repositorios
-- [ ] Crear controladores REST
-- [ ] Agregar DTOs y validaciones
-- [ ] Configurar base de datos de producción (PostgreSQL, MySQL, etc.)
-- [ ] Implementar manejo de excepciones
-- [ ] Agregar documentación API (Swagger/OpenAPI)
-- [ ] Configurar seguridad (Spring Security)
-
 ## 👤 Autor
 
-- [Tu nombre aquí]
+- Emanuel Lautaro Cabrera Zembrunski
 
 ## 📄 Licencia
 
